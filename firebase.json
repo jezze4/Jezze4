@@ -1,6 +1,6 @@
 {
   "hosting": {
-	"site": "jezze4",
+    "site": "jezze4",
     "public": "build",
     "ignore": [
       "firebase.json",
