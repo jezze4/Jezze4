@@ -1,0 +1,35 @@
+.home-module-container{
+  display: flex;
+  flex-direction: column;
+  height: 35vmin;
+  width: 35vmin;
+  padding: 20px;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  border: solid 2px azure;
+  margin: 12px;
+}
+
+.home-module-title{
+  font-size: 7vmin !important;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: Ubuntu Light !important;
+  transition: all .3s !important;
+}
+
+.home-module-body{
+  font-size: 0vmin !important;
+  color: Whitesmoke;
+  transition: all .3s !important;
+  transform: translateY(200%);
+  overflow-y: hidden;
+  opacity: 0;
+}
+
+.home-module-hover{
+  font-size: 2.25vmin !important;
+  transform: translateY(10%);
+  opacity: .8;
+}
