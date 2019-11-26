@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import './assets/css/animations.css';
 import './assets/css/home.css';
 import './assets/css/homemodule.css';
 

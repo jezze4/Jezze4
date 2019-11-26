@@ -7,16 +7,25 @@
   border-radius: 50%;
   text-align: center;
   justify-content: center;
-  border: solid 2px azure;
+  /* border: solid 2px azure; */
   margin: 12px;
+  box-shadow: 0 0 0px red;
+  animation: glowOut 1s ease forwards;
+  font-size: 6vmin !important;
+}
+
+.home-module-container:hover{
+  font-size: 8.2vmin !important;
+  animation: glow 2s ease infinite;
 }
 
 .home-module-title{
-  font-size: 7vmin !important;
+  font-size: inherit !important;
   overflow: hidden;
   white-space: nowrap;
   font-family: Ubuntu Light !important;
   transition: all .3s !important;
+  color: white;
 }
 
 .home-module-body{

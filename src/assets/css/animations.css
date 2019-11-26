@@ -1,0 +1,10 @@
+@keyframes glow {
+  0% { box-shadow: 0 0 0px, 0 0 0px inset;}
+  50% { box-shadow: 0 0 30px, 0 0 30px inset;}
+  100% { box-shadow: 0 0 0px, 0 0 0px inset;}
+}
+
+@keyframes glowOut {
+  0% { box-shadow: 0 0 20px, 0 0 20px inset;}
+  100% { box-shadow: 0 0 0px, 0 0 0px inset;}
+}

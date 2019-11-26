@@ -3,9 +3,9 @@ import Typography from '@material-ui/core/Typography';
 
 class HomeModule extends PureComponent {
 
-  handleOnHover = (data) => {
+  handleOnHover = (data, etc) => {
     let ref = data.currentTarget.children[1];
-    ref.classList.add("home-module-hover")
+    ref.classList.add("home-module-hover");
   }
 
   removeOnHover = (data) => {
@@ -17,6 +17,7 @@ class HomeModule extends PureComponent {
     return(
       <div
       className="home-module-container"
+      style={{color: this.props.color, border: this.props.color + " 0px solid"}}
       onMouseEnter={this.handleOnHover}
       onMouseLeave={this.removeOnHover}>
         <Typography className="home-module-title">
