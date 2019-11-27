@@ -1,3 +1,23 @@
+.anim-typewriter{
+  font-family: 'Roboto Mono' !important;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange !important; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  /*margin: 0 auto !important; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .10em !important; /* Adjust as needed */
+  /* animation: typewriter 2s steps(19) 1s 1 normal both, */
+  /* animation: blinkTextCursor 500ms steps(35) infinite normal; */
+}
+
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 100%;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
 @keyframes glow {
   0% { box-shadow: 0 0 0px, 0 0 0px inset;}
   50% { box-shadow: 0 0 30px, 0 0 30px inset;}

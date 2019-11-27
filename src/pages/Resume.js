@@ -4,6 +4,15 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
 
+function typewriterAnimation(steps){
+  return(
+    {
+      animation: 'typewriter '+(steps/15)+'s steps('+steps+') 1s 1 normal both,'+
+      'blinkTextCursor 500ms steps('+steps+') infinite normal'
+    }
+  );
+}
+
 class Resume extends PureComponent {
   state = {
     value: 0,
@@ -12,7 +21,12 @@ class Resume extends PureComponent {
   renderGeneralInfo() {
     return(
       <Grid container style={{padding: '16px 24px'}}>
-        <Typography variant='h2' className="resume-section-title">General Information</Typography>
+        <Typography
+          variant='h2'
+          className="resume-section-title anim-typewriter"
+          style={typewriterAnimation(19)}>
+          General Information
+        </Typography>
 
       </Grid>
     );
@@ -21,7 +35,12 @@ class Resume extends PureComponent {
   renderSkills() {
     return(
       <Grid container style={{padding: '16px 24px'}}>
-        <Typography variant='h2' className="resume-section-title">Skills</Typography>
+        <Typography
+          variant='h2'
+          className="resume-section-title anim-typewriter"
+          style={typewriterAnimation(5)}>
+          Skills
+        </Typography>
 
       </Grid>
     );
@@ -30,7 +49,13 @@ class Resume extends PureComponent {
   renderExperience() {
     return(
       <Grid container style={{padding: '16px 24px'}}>
-        <Typography variant='h2' className="resume-section-title">Experience</Typography>
+        <Typography
+          variant='h2'
+          className="resume-section-title anim-typewriter"
+          style={typewriterAnimation(10)}
+          >
+          Experience
+        </Typography>
 
       </Grid>
     );
