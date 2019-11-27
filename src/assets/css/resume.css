@@ -1,0 +1,33 @@
+.resume-container{
+  max-height: 100vh;
+  display: flex;
+}
+
+.resume-tabs-root{
+  height: 100vh;
+  width: 60px !important;
+  color: violet;
+  /* background: red; */
+}
+
+.resume-tabs-indicator{
+  background: linear-gradient(to bottom, black, black, black, violet, black, black, black) !important;
+  background-size: 200% 200% !important;
+  animation: oscillateIndicator 3s ease infinite;
+}
+
+.resume-tab-root{
+  height: calc(100vh/3);
+  min-width: 100% !important;
+  padding: 0 !important;
+}
+
+.resume-tab-wrapper{
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.25em;
+  color: white;
+}
+
+.resume-section-title{
+}

@@ -8,3 +8,9 @@
   0% { box-shadow: 0 0 20px, 0 0 20px inset;}
   100% { box-shadow: 0 0 0px, 0 0 0px inset;}
 }
+
+@keyframes oscillateIndicator {
+  0% { background-position: 0% 25%; }
+  50% { background-position: 0% 75%; }
+  100% { background-position: 0% 25%; }
+}

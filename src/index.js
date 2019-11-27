@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import './assets/css/animations.css';
 import './assets/css/home.css';
 import './assets/css/homemodule.css';
+import './assets/css/resume.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
