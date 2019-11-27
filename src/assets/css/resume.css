@@ -29,5 +29,12 @@
   color: white;
 }
 
+.resume-section-container{
+  padding: 16px 24px;
+  height: calc(100% - 48px);
+  overflow: hidden;
+}
+
 .resume-section-title{
+  margin-bottom: 36px !important;
 }

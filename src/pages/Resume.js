@@ -3,11 +3,12 @@ import Typography from '@material-ui/core/Typography';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 function typewriterAnimation(steps){
   return(
     {
-      animation: 'typewriter '+(steps/15)+'s steps('+steps+') 1s 1 normal both,'+
+      animation: 'typewriter '+(steps/20)+'s steps('+steps+') .5s 1 normal both,'+
       'blinkTextCursor 500ms steps('+steps+') infinite normal'
     }
   );
@@ -20,7 +21,8 @@ class Resume extends PureComponent {
 
   renderGeneralInfo() {
     return(
-      <Grid container style={{padding: '16px 24px'}}>
+      <div className="resume-section-container">
+
         <Typography
           variant='h2'
           className="resume-section-title anim-typewriter"
@@ -28,13 +30,54 @@ class Resume extends PureComponent {
           General Information
         </Typography>
 
-      </Grid>
+        <Typography gutterBottom component="div">
+          <Box fontStyle="oblique" color="darkgray" width="50%" component="div" marginBottom="24px">
+            With a great love for architecture and design, solving puzzles, math,
+            and attention to even the smallest of details, I follow the path of
+            aweb developer with a stronger focus on the front-end and hope to use
+            my skills to make a change in the world.
+          </Box>
+        </Typography>
+        <Typography variant="h3" gutterBottom>Name: Jesus Gonzalo Martinez Jr.</Typography>
+        <Typography variant="h5" gutterBottom>Full-Stack Developer, Android Developer</Typography>
+        <hr />
+        <Grid container direction="row" className="resume-section-body" justify="space-evenly">
+          <Grid container direction="column" justify="space-around">
+            <Typography variant="h6" gutterBottom
+              style={{fontWeight: '400'}}>
+              Email: jezze.04@gmail.com
+            </Typography>
+            <Typography variant="h6" gutterBottom
+              style={{fontWeight: '400'}}>
+              Github: github.com/jezze4
+            </Typography>
+            <Typography variant="h6" gutterBottom
+              style={{fontWeight: '400'}}>
+              LinkedIn: in/jezze4
+            </Typography>
+            <br />
+            <Typography variant="h6" gutterBottom
+              style={{fontWeight: '400'}}>
+              School: The University of Texas, Austin
+            </Typography>
+            <Typography variant="h6" gutterBottom
+              style={{fontWeight: '400'}}>
+              Major: Computer Science
+            </Typography>
+            <Typography variant="h6" gutterBottom
+              style={{fontWeight: '400'}}>
+              Degree: Bachelor of Science and Arts
+            </Typography>
+          </Grid>
+        </Grid>
+
+      </div>
     );
   }
 
   renderSkills() {
     return(
-      <Grid container style={{padding: '16px 24px'}}>
+      <div className="resume-section-container">
         <Typography
           variant='h2'
           className="resume-section-title anim-typewriter"
@@ -42,13 +85,13 @@ class Resume extends PureComponent {
           Skills
         </Typography>
 
-      </Grid>
+      </div>
     );
   }
 
   renderExperience() {
     return(
-      <Grid container style={{padding: '16px 24px'}}>
+      <div className="resume-section-container">
         <Typography
           variant='h2'
           className="resume-section-title anim-typewriter"
@@ -57,7 +100,7 @@ class Resume extends PureComponent {
           Experience
         </Typography>
 
-      </Grid>
+      </div>
     );
   }
 
@@ -67,7 +110,6 @@ class Resume extends PureComponent {
 
   render(){
     const {value} = this.state;
-    console.log(value)
     return(
       <div className="resume-container">
         <Tabs

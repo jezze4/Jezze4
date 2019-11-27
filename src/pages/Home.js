@@ -1,5 +1,4 @@
 import React, {PureComponent} from 'react';
-import Typography from '@material-ui/core/Typography';
 
 import HomeModule from '../components/HomeModule';
 
