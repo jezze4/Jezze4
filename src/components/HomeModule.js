@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 
 class HomeModule extends PureComponent {
 
-  handleOnHover = (data, etc) => {
+  handleOnHover = (data) => {
     let ref = data.currentTarget.children[1];
     ref.classList.add("home-module-hover");
   }

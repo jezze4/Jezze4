@@ -1,6 +1,7 @@
 .resume-container{
   max-height: 100vh;
   display: flex;
+  overflow-y: hidden;
 }
 
 .resume-tabs-root{
@@ -30,11 +31,25 @@
 }
 
 .resume-section-container{
-  padding: 16px 24px;
+  padding: 16px;
   height: calc(100% - 48px);
-  overflow: hidden;
+}
+
+.resume-section-skills{
+  width: calc(100vw - 160px);
+  height: calc(100% - 160px);
+  overflow-y: auto;
 }
 
 .resume-section-title{
   margin-bottom: 36px !important;
+}
+
+.resume-skill{
+  border: 1px inset rgba(255,255,255,.1);
+  border-radius: 2px;
+  text-align: center;
+  padding: 8px;
+  transition: all .2s;
+  color: rgba(255,255,255,.5)
 }
