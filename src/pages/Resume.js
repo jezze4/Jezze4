@@ -6,9 +6,10 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
 function typewriterAnimation(steps){
+  steps = 35;
   return(
     {
-      animation: 'typewriter '+(steps/20)+'s steps('+steps+') .5s 1 normal both,'+
+      animation: 'typewriter '+(1)+'s steps('+steps+') .5s 1 normal both,'+
       'blinkTextCursor 500ms steps('+steps+') infinite normal'
     }
   );
@@ -104,8 +105,8 @@ class Resume extends PureComponent {
             <Box fontStyle="oblique" color="darkgray" width="50%" component="div" marginBottom="24px">
               With a great love for architecture and design, solving puzzles, math,
               and attention to even the smallest of details, I follow the path of
-              aweb developer with a stronger focus on the front-end and hope to use
-              my skills to make a change in the world.
+              a web developer with a stronger focus on the front-end and a desire
+              to use my skills to make a change in the world.
             </Box>
           </Typography>
           <Typography variant="h2" gutterBottom>Jesus Gonzalo Martinez Jr.</Typography>
@@ -188,20 +189,20 @@ class Resume extends PureComponent {
 
   renderSkills() {
     return(
-      <div className="resume-section-container" style={{width: '100%'}}>
-        <Typography
-          variant='h2'
-          className="resume-section-title anim-typewriter"
-          style={typewriterAnimation(5)}>
-          Skills
-        </Typography>
-        <Typography gutterBottom component="div" variant="h6" style={fadeInAnimation((5/20 + .2))}>
-          <Box fontStyle="oblique" color="darkgray" width="100%" fontWeight="300"
+      <div className="resume-section-container">
+          <Typography
+            variant='h2'
+            className="resume-section-title anim-typewriter"
+            style={typewriterAnimation(6)}>
+            Skills
+          </Typography>
+        <Typography gutterBottom component="div" variant="h6" style={fadeInAnimation((6/20 + .2))}>
+          <Box fontStyle="oblique" color="darkgray" fontWeight="300"
             component="div" marginBottom="36px" textAlign="center">
             <span style={{fontSize: '.7em',color: "rgba(255,255,255,.4)"}}>{this.state.skill}</span>{this.state.skillInfo}
           </Box>
         </Typography>
-        <div className="resume-section-skills" style={fadeInAnimation((5/20 + .2))}>
+        <div className="resume-section-skills" style={fadeInAnimation((6/20 + .2))}>
           <Grid container direction="row" justify="space-around" style={{width: '100%'}}>
             <Grid item style={{width: '25%'}}>
               <Typography variant="h4" gutterBottom style={{textAlign: 'center', color: 'green'}}>

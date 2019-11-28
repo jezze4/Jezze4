@@ -6,7 +6,9 @@
 
 .resume-tabs-root{
   height: 100vh;
-  width: 60px !important;
+  width: 44px !important;
+  max-width: 44px !important;
+  min-width: 44px !important;
   color: violet;
   /* background: red; */
 }
@@ -32,7 +34,8 @@
 
 .resume-section-container{
   padding: 16px;
-  height: calc(100% - 48px);
+  height: calc(100vw - 48px);
+  width: calc(100vw - 76px);
 }
 
 .resume-section-skills{
