@@ -25,40 +25,67 @@ function fadeInAnimation(delay){
 
 const Skills = {
   ProficientTools : [
-    {skill : 'C',         info: "info"},
-    {skill : 'C++',       info: "info"},
-    {skill : 'Java',      info: "info"},
-    {skill : 'JavaScript', info: "info"},
-    {skill : 'ReactJS',   info: "info"},
-    {skill : 'Git',       info: "info"}],
+    { skill : 'C',
+      info: "Used for Operating Systems projects. "},
+    { skill : 'C++',
+      info: "Used in Computer Graphics, Game Technology, and Object-Oriented Programming. APIs used with include OGRE3D and OpenGL"},
+    { skill : 'Java',
+      info: "Used in Data Structures and Object-Oriented Programming. Used for side Android projects"},
+    { skill : 'JavaScript',
+      info: "Used while working on side web projects. Frameworks known include ReactJS, NodeJS, & ExpressJS"},
+    { skill : 'ReactJS',
+      info: "Main tool used for web development. 1.5+ years of experience"},
+    { skill : 'Git',
+      info: "2+ years of experience."}],
   FamiliarTools : [
-    {skill: 'Kotlin',     info: "info"},
-    {skill: 'C#',         info: "info"},
-    {skill: 'PHP',        info: "info"},
-    {skill: 'Python',     info: "info"},
-    {skill: 'SQL',        info: "info"},
-    {skill: 'React Native', info: "info"},
-    {skill: 'WordPress',  info: "info"},
-    {skill: 'NPM',        info: "info"},
-    {skill: 'NodeJS',     info: "info"},
-    {skill: 'Ruby-on-Rails', info: "info"}],
+    { skill: 'Kotlin',
+      info: "Basic knowledge. Used to create app for LDO as practice."},
+    { skill: 'C#',
+      info: "Basic knowledge with unsaved practice."},
+    { skill: 'PHP',
+      info: "Basic knowledge. Used to practice on a local server"},
+    { skill: 'Python',
+      info: "Used in Software Engineering. Intermediate knowledge of functions."},
+    { skill: 'SQL',
+      info: "Fair amount of experience (2+ years). SQL: MySQL, PostgreSQL. NoSQL: MongoDB, Firestore "},
+    { skill: 'React Native',
+      info: "Fair amount of experience (~2 years). Practiced creating apps using Expo"},
+    { skill: 'WordPress',
+      info: "Fair amount of experience. Used for LDO website. Maintained until late 2017 (1 year)"},
+    { skill: 'NPM',
+      info: "Basic knowledge of dealing with packages, dependencies, and fixing errors."},
+    { skill: 'NodeJS/ExpressJS',
+      info: "Basic knowledge. Learned base then continued with ExpressJS"},
+    { skill: 'Ruby-on-Rails',
+      info: "Fair amount of experience. Used to create SHOME project"}],
   HardSkills : [
-    {skill: 'Algorithms',       info: "info"},
-    {skill: 'Data Structures',  info: "info"},
-    {skill: 'Big(O) Management', info: "info"},
-    {skill: 'Object-Oriented Programming/Design', info: "info"},
-    {skill: 'CI/CD',            info: "info"}],
+    { skill: 'Algorithms',
+      info: "Knowledge consistent with most UTCS students"},
+    { skill: 'Data Structures',
+      info: "Knowledge consistent with most UTCS students"},
+    { skill: 'Big(O) Management',
+      info: "Constantly review speed of data structure functions while avoiding inefficient algorithms"},
+    { skill: 'Object-Oriented Programming/Design',
+      info: "Fair amount of experience (3+ years). "},
+    { skill: 'CI/CD',
+      info: "Integrated in a few projects (VoteWisely, OOP projects)."}],
   SoftSkills : [
-    {skill: 'Adaptability',     info: "info"},
-    {skill: 'Communication',    info: "info"},
-    {skill: 'Eagerness',        info: "info"},
-    {skill: 'Detail-Oriented!', info: "info"},
-    {skill: 'Empathetic',       info: "info"}]
+    { skill: 'Adaptability',
+      info: "Known to work in various conditions - from the bus to restaurants to a simple desk"},
+    { skill: 'Communication',
+      info: "Experience talking with clients with little-to-no tech knowledge"},
+    { skill: 'Eagerness',
+      info: "Always want to learn something new and start on a new project!!"},
+    { skill: 'Detail-Oriented!',
+      info: "Border-line compulsive-level attention to details"},
+    { skill: 'Empathetic',
+      info: "Will work around keeping others satisfied and happy in the environment. "}]
 }
 
 class Resume extends PureComponent {
   state = {
     value: 1,
+    skill: '',
     skillInfo: 'Hover over a skill to see relevant experience'
   }
 
@@ -118,29 +145,40 @@ class Resume extends PureComponent {
     );
   }
 
-      skillEnter = (value, color, skillInfo) => {
+      skillEnter = (value, color, skill, skillInfo) => {
         let ref = value.currentTarget;
         ref.style.boxShadow = "0 0 20px " + color + " inset";
         ref.style.color = "inherit";
-        this.setState({skillInfo})
+        if(skill==="Object-Oriented Programming/Design") skill="OOP/OOD"
+        if(skill==="Big(O) Management") skill="Big O"
+        skill = skill + ': '
+        this.setState({
+          skill,
+          skillInfo
+        })
       }
 
       skillLeave = (value) => {
         let ref = value.currentTarget;
         ref.style.boxShadow = "none";
-        this.setState({skillInfo: 'Hover over a skill to see relevant experience'});
+        this.setState({
+          skill: '',
+          skillInfo: 'Hover over a skill to see relevant experience'
+        });
       }
 
       showSkill = (skill, skillInfo, type, index) => {
-        let color = (type === "proficient") ? "green" : (type === "familiar") ? "blue"
-              : (type === "hard") ? "violet" : "red";
+        let color = (type === "proficient") ? "green"
+                  : (type === "familiar") ? "blue"
+                  : (type === "hard") ? "violet"
+                  : "red";
         let key = skill + '-' + index;
         return(
           <Typography
             key={key}
             className="resume-skill"
-            variant="h5"
-            onMouseEnter={(val)=>this.skillEnter(val, color, skillInfo)}
+            variant="body1"
+            onMouseEnter={(val)=>this.skillEnter(val, color, skill, skillInfo)}
             onMouseLeave={this.skillLeave}
           >
             {skill}
@@ -157,10 +195,10 @@ class Resume extends PureComponent {
           style={typewriterAnimation(5)}>
           Skills
         </Typography>
-        <Typography gutterBottom component="div" variant="h4" style={fadeInAnimation((5/20 + .2))}>
-          <Box fontStyle="oblique" color="darkgray" width="100%"
+        <Typography gutterBottom component="div" variant="h6" style={fadeInAnimation((5/20 + .2))}>
+          <Box fontStyle="oblique" color="darkgray" width="100%" fontWeight="300"
             component="div" marginBottom="36px" textAlign="center">
-            {this.state.skillInfo}
+            <span style={{fontSize: '.7em',color: "rgba(255,255,255,.4)"}}>{this.state.skill}</span>{this.state.skillInfo}
           </Box>
         </Typography>
         <div className="resume-section-skills" style={fadeInAnimation((5/20 + .2))}>
@@ -173,7 +211,7 @@ class Resume extends PureComponent {
                 this.showSkill(skill.skill, skill.info, "proficient", index))}
             </Grid>
             <Grid item style={{width: '25%'}}>
-              <Typography variant="h4" gutterBottom style={{textAlign: 'center', color: 'blue'}}>
+              <Typography variant="h4" gutterBottom style={{textAlign: 'center', color: 'royalblue'}}>
                 Familiar
               </Typography>
               {Skills.FamiliarTools.map( (skill, index) =>
