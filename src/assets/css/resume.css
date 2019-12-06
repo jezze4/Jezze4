@@ -57,3 +57,39 @@
   color: rgba(255,255,255,.5);
   white-space: nowrap;
 }
+
+.experience-company{
+  border: 1px solid rgba(255,255,255, .1);
+  padding: 8px;
+  border-radius: 2px;
+  transition: all .4s;
+  white-space: nowrap;
+  font-size: 3vmin !important;
+  text-align: center;
+  color: rgba(255,255,255,.5);
+}
+
+.experience-company:hover{
+  border-color: violet;
+  box-shadow: 0 0 20px violet inset;
+  color: whitesmoke;
+}
+
+.experience-data{
+  padding: 36px;
+  color: gainsboro;
+}
+
+.experience-role{
+  padding-left: 12px;
+  font-family: "Ubuntu" !important;
+  font-weight: bold !important;
+  font-size: 6vmin !important;
+  border-bottom: 1px solid violet;
+  border-left: 1px solid violet;
+}
+
+.experience-desc{
+  font-size: 4vmin !important;
+  padding: 24px;
+}

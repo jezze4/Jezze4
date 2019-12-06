@@ -57,4 +57,49 @@ const Skills = {
       info: "Will work around keeping others satisfied and happy in the environment. "}]
 };
 
-export default Skills;
+const Experience = [
+  {
+    company: "LDO Staffing Solutions",
+    role: "Web Developer (WordPress)",
+    description: "Migrated from vanilla development (using " +
+    " Bootstrap, JavaScript/jQuery, PHP, and SQL with MariaDB) to WordPress to" +
+    " allow for easier and faster content management"
+  },
+  {
+    company: "Sport's Recovery Lounge",
+    role: "Web Developer (ReactJS)",
+    description: "Built responsive website for startup using React for front-end" +
+    " to allow customers to quickly and easily make appointments through desktop" +
+    " or mobile. Hosting and database storage done on Firebase."
+  },
+  {
+    company: "The Wise Vote",
+    role: "Lead Front-End Developer (ReactJS)",
+    description: "Lead the frontend development in a team of six to create a " +
+    "fast and well-received UX and modern UI using styled Material-UI components for React; " +
+    "Managed to design the only project of 11 to have a mobile-friendly website " +
+    "that still satisfied project requirements"
+  },
+  {
+    company: "SHOME",
+    role: "Front-End Developer (Ruby-on-Rails)",
+    description: "Recruited to lead the front-end development and managed to " +
+    "improvecode-readability, reduce code used, and enhance mobile UI/UX"
+  },
+  {
+    company: "LDO Staffing Solutions App",
+    role: "Android Devoper (Kotlin)",
+    description: "Utilizing Firebase as a database, a user can look at listings " +
+    "and apply for a job within the app by uploading a resume file (local or " +
+    "Google Drive) which is sent to a pre-determined email. Set up using JavaMail API."
+  },
+  {
+    company: "PintOS",
+    role: "C Developer",
+    description: "Expanded on the pintos toy OS project to include priority " +
+    "scheduling, allow argument passing onto stack, implement system calls for " +
+    "user programs, add virtual memory, and use a multi-level indexed file system."
+  }
+]
+
+export {Skills, Experience};

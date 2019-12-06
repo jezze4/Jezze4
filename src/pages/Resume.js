@@ -5,7 +5,7 @@ import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
-import Skills from '../components/Skills';
+import {Skills, Experience} from '../components/Data';
 
 function typewriterAnimation(steps){
   steps = 35;
@@ -28,9 +28,13 @@ function fadeInAnimation(delay){
 
 class Resume extends PureComponent {
   state = {
-    value: 1,
+    value: 2,
     skill: '',
-    skillInfo: 'Hover over a skill to see relevant experience'
+    skillInfo: 'Hover over a skill to see relevant experience',
+    expData: {
+      role: 'Unselected',
+      desc: 'Hover over a category to see experience'
+    }
   }
 
   renderGeneralInfo() {
@@ -181,7 +185,19 @@ class Resume extends PureComponent {
     );
   }
 
+  expEnter = (role, desc) => {
+    const newData = {role: role, desc: desc}
+    this.setState({
+      expData: newData
+    })
+  }
+
+  expLeave = (role, desc) => {
+
+  }
+
   renderExperience() {
+    const {expData} = this.state;
     return(
       <div className="resume-section-container">
         <Typography
@@ -191,7 +207,19 @@ class Resume extends PureComponent {
           >
           Experience
         </Typography>
-
+        <div className="resume-section-experience" style={fadeInAnimation((10/20 + .2))}>
+          <Grid container direction="row" spacing={4}>
+            {Experience.map( (value, index) =>
+              <Grid item sm={4} onMouseEnter={()=>this.expEnter(value.role, value.description)}>
+                <Typography className="experience-company">{value.company}</Typography>
+              </Grid>
+            )}
+          </Grid>
+          <div className="experience-data">
+            <Typography gutterBottom className="experience-role">{expData.role}</Typography>
+            <Typography className="experience-desc">{expData.desc}</Typography>
+          </div>
+        </div>
       </div>
     );
   }
