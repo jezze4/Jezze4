@@ -5,6 +5,8 @@ import Tab from '@material-ui/core/Tab';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
+import Skills from '../components/Skills';
+
 function typewriterAnimation(steps){
   steps = 35;
   return(
@@ -22,65 +24,6 @@ function fadeInAnimation(delay){
       animation: 'fadeIn 2s '+delay+'s forwards',
     }
   )
-}
-
-const Skills = {
-  ProficientTools : [
-    { skill : 'C',
-      info: "Used for Operating Systems projects. "},
-    { skill : 'C++',
-      info: "Used in Computer Graphics, Game Technology, and Object-Oriented Programming. APIs used with include OGRE3D and OpenGL"},
-    { skill : 'Java',
-      info: "Used in Data Structures and Object-Oriented Programming. Used for side Android projects"},
-    { skill : 'JavaScript',
-      info: "Used while working on side web projects. Frameworks known include ReactJS, NodeJS, & ExpressJS"},
-    { skill : 'ReactJS',
-      info: "Main tool used for web development. 1.5+ years of experience"},
-    { skill : 'Git',
-      info: "2+ years of experience."}],
-  FamiliarTools : [
-    { skill: 'Kotlin',
-      info: "Basic knowledge. Used to create app for LDO as practice."},
-    { skill: 'C#',
-      info: "Basic knowledge with unsaved practice."},
-    { skill: 'PHP',
-      info: "Basic knowledge. Used to practice on a local server"},
-    { skill: 'Python',
-      info: "Used in Software Engineering. Intermediate knowledge of functions."},
-    { skill: 'SQL',
-      info: "Fair amount of experience (2+ years). SQL: MySQL, PostgreSQL. NoSQL: MongoDB, Firestore "},
-    { skill: 'React Native',
-      info: "Fair amount of experience (~2 years). Practiced creating apps using Expo"},
-    { skill: 'WordPress',
-      info: "Fair amount of experience. Used for LDO website. Maintained until late 2017 (1 year)"},
-    { skill: 'NPM',
-      info: "Basic knowledge of dealing with packages, dependencies, and fixing errors."},
-    { skill: 'NodeJS/ExpressJS',
-      info: "Basic knowledge. Learned base then continued with ExpressJS"},
-    { skill: 'Ruby-on-Rails',
-      info: "Fair amount of experience. Used to create SHOME project"}],
-  HardSkills : [
-    { skill: 'Algorithms',
-      info: "Knowledge consistent with most UTCS students"},
-    { skill: 'Data Structures',
-      info: "Knowledge consistent with most UTCS students"},
-    { skill: 'Big(O) Management',
-      info: "Constantly review speed of data structure functions while avoiding inefficient algorithms"},
-    { skill: 'Object-Oriented Programming/Design',
-      info: "Fair amount of experience (3+ years). "},
-    { skill: 'CI/CD',
-      info: "Integrated in a few projects (VoteWisely, OOP projects)."}],
-  SoftSkills : [
-    { skill: 'Adaptability',
-      info: "Known to work in various conditions - from the bus to restaurants to a simple desk"},
-    { skill: 'Communication',
-      info: "Experience talking with clients with little-to-no tech knowledge"},
-    { skill: 'Eagerness',
-      info: "Always want to learn something new and start on a new project!!"},
-    { skill: 'Detail-Oriented!',
-      info: "Border-line compulsive-level attention to details"},
-    { skill: 'Empathetic',
-      info: "Will work around keeping others satisfied and happy in the environment. "}]
 }
 
 class Resume extends PureComponent {
@@ -198,7 +141,7 @@ class Resume extends PureComponent {
           </Typography>
         <Typography gutterBottom component="div" variant="h6" style={fadeInAnimation((6/20 + .2))}>
           <Box fontStyle="oblique" color="darkgray" fontWeight="300"
-            component="div" marginBottom="36px" textAlign="center">
+            component="div" marginBottom="36px" textAlign="center" whiteSpace="nowrap">
             <span style={{fontSize: '.7em',color: "rgba(255,255,255,.4)"}}>{this.state.skill}</span>{this.state.skillInfo}
           </Box>
         </Typography>

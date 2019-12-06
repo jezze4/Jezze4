@@ -55,4 +55,5 @@
   padding: 8px;
   transition: all .2s;
   color: rgba(255,255,255,.5);
+  white-space: nowrap;
 }
