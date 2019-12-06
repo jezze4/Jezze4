@@ -92,4 +92,29 @@
 .experience-desc{
   font-size: 4vmin !important;
   padding: 24px;
+  line-height: 1.6 !important;
+}
+
+.resume-pdf-link{
+  border: 1px solid deepskyblue;
+  border-radius: 2px;
+  padding: 12px;
+  color: deepskyblue;
+  position: fixed;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.resume-pdf-link:hover{
+  box-shadow: 0 0 20px inset deepskyblue;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  filter: brightness(120%);
 }

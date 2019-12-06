@@ -28,7 +28,7 @@ function fadeInAnimation(delay){
 
 class Resume extends PureComponent {
   state = {
-    value: 2,
+    value: 0,
     skill: '',
     skillInfo: 'Hover over a skill to see relevant experience',
     expData: {
@@ -65,13 +65,15 @@ class Resume extends PureComponent {
                 style={{fontWeight: '400'}}>
                 Email: jezze.04@gmail.com
               </Typography>
-              <Typography variant="h6" gutterBottom
-                style={{fontWeight: '400'}}>
-                Github: github.com/jezze4
+              <Typography variant="h6" style={{fontWeight: '400'}} gutterBottom>
+                <a rel='noopener noreferrer' target="_blank" href="https://github.com/jezze4">
+                  Github: github.com/jezze4
+                </a>
               </Typography>
-              <Typography variant="h6" gutterBottom
-                style={{fontWeight: '400'}}>
-                LinkedIn: in/jezze4
+              <Typography variant="h6" gutterBottom style={{fontWeight: '400'}}>
+                <a rel='noopener noreferrer' target="_blank" href="https://linkedin.com/in/jezze4">
+                  LinkedIn: in/jezze4
+                </a>
               </Typography>
               <br />
               <Typography variant="h6" gutterBottom
@@ -192,10 +194,6 @@ class Resume extends PureComponent {
     })
   }
 
-  expLeave = (role, desc) => {
-
-  }
-
   renderExperience() {
     const {expData} = this.state;
     return(
@@ -210,7 +208,8 @@ class Resume extends PureComponent {
         <div className="resume-section-experience" style={fadeInAnimation((10/20 + .2))}>
           <Grid container direction="row" spacing={4}>
             {Experience.map( (value, index) =>
-              <Grid item sm={4} onMouseEnter={()=>this.expEnter(value.role, value.description)}>
+              <Grid key={"exp-section-"+index} item sm={4}
+                onMouseEnter={()=>this.expEnter(value.role, value.description)}>
                 <Typography className="experience-company">{value.company}</Typography>
               </Grid>
             )}
@@ -221,6 +220,14 @@ class Resume extends PureComponent {
           </div>
         </div>
       </div>
+    );
+  }
+
+  renderPDF() {
+    return(
+      <a className="resume-pdf-link" target="_blank" href="Resume_JesusMartinez.pdf" download>
+        <Typography>Download Resume PDF</Typography>
+      </a>
     );
   }
 
@@ -270,6 +277,7 @@ class Resume extends PureComponent {
         <div hidden={value!==0}>{this.renderGeneralInfo()}</div>
         <div hidden={value!==1}>{this.renderSkills()}</div>
         <div hidden={value!==2}>{this.renderExperience()}</div>
+        {this.renderPDF()}
       </div>
     );
   }
