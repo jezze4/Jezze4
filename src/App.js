@@ -4,7 +4,8 @@ import './App.css';
 
 import Home from './pages/Home';
 import Resume from './pages/Resume';
-import ResumePDF from './pages/ResumePDF';
+import About from './pages/About';
+import Portfolio from './pages/Portfolio';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Switch>
           <Route exact path="/" render={()=><Home />}/>
           <Route exact path="/resume" render={()=><Resume />}/>
-          <Route exact path="/resume/pdf" render={()=><ResumePDF />}/>
+          <Route exact path="/about" render={()=><About />}/>
+          <Route exact path="/portfolio" render={()=><Portfolio />}/>
         </Switch>
       )}/>
     </Router>

@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom';
 
 class HomeModule extends PureComponent {
 
@@ -15,7 +16,7 @@ class HomeModule extends PureComponent {
 
   render(){
     return(
-      <div
+      <Link to={this.props.link}
       className="home-module-container"
       style={{color: this.props.color, border: this.props.color + " 0px solid"}}
       onMouseEnter={this.handleOnHover}
@@ -26,7 +27,7 @@ class HomeModule extends PureComponent {
         <Typography className="home-module-body">
           {this.props.body}
         </Typography>
-      </div>
+      </Link>
     );
   }
 }
