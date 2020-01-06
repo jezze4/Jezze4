@@ -63,7 +63,10 @@ const Experience = [
     role: "Web Developer (WordPress)",
     description: "Migrated from vanilla development (using " +
     " Bootstrap, JavaScript/jQuery, PHP, and SQL with MariaDB) to WordPress to" +
-    " allow for easier and faster content management"
+    " allow for easier and faster content management." +
+    " Converted to ReactJS + Firebase while creating a small CMS for the client." +
+    " Added an app-like experience to make it easier for users to traverse through" +
+    " the site and send in applications."
   },
   {
     company: "Sport's Recovery Lounge",

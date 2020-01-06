@@ -15,15 +15,15 @@ class Home extends PureComponent {
         <HomeModule
           title="Resume"
           body="This is the body of the home module for a description"
-          color="violet"
+          color="crimson"
           link="/resume"
         />
-        <HomeModule
+        {/* <HomeModule
           title="About"
           body="This is the body of the home module for a description"
           color="crimson"
           link="/about"
-        />
+        /> */}
       </div>
     );
   }

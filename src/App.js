@@ -4,7 +4,6 @@ import './App.css';
 
 import Home from './pages/Home';
 import Resume from './pages/Resume';
-import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
         <Switch>
           <Route exact path="/" render={()=><Home />}/>
           <Route exact path="/resume" render={()=><Resume />}/>
-          <Route exact path="/about" render={()=><About />}/>
           <Route exact path="/portfolio" render={()=><Portfolio />}/>
         </Switch>
       )}/>

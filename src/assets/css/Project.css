@@ -1,0 +1,6 @@
+.project-root{
+  padding: 48px;
+  height: calc(80vh - 96px);
+  background: red;
+  margin: calc(10vh + 10%) 10%;
+}

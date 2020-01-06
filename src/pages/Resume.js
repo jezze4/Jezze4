@@ -208,9 +208,11 @@ class Resume extends PureComponent {
         <div className="resume-section-experience" style={fadeInAnimation((10/20 + .2))}>
           <Grid container direction="row" spacing={4}>
             {Experience.map( (value, index) =>
-              <Grid key={"exp-section-"+index} item sm={4}
-                onMouseEnter={()=>this.expEnter(value.role, value.description)}>
-                <Typography className="experience-company">{value.company}</Typography>
+              <Grid key={"exp-section-"+index} item sm={4}>
+                <Typography className="experience-company"
+                  onMouseEnter={()=>this.expEnter(value.role, value.description)}>
+                  {value.company}
+                </Typography>
               </Grid>
             )}
           </Grid>
