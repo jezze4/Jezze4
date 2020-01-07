@@ -2,6 +2,8 @@ import React, {PureComponent} from 'react';
 import {
   Typography, Grid
 } from '@material-ui/core';
+import SwipeableViews from 'react-swipeable-views';
+
 import DesktopTemplate from '../assets/imgs/MacScreen_sm.png'
 import MobileTemplate from '../assets/imgs/GalaxyScreen.png'
 
@@ -33,7 +35,7 @@ class Project extends PureComponent {
     const {project} = this.props;
     return(
       <div className="project-root">
-        <Typography variant="h3">{project.title}</Typography>
+        {/* <Typography variant="h3">{project.title}</Typography> */}
         <Typography component="p">{project.description}</Typography>
         <Typography component="p">Design Style: {project.type}</Typography>
         <Typography component="p">
