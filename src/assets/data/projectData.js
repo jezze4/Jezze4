@@ -36,7 +36,7 @@ const WebProjects = [
     database: 'Firestore',
     imagesDesktop: [SRL_D1, SRL_D2, SRL_D3],
     imagesMobile: [SRL_M1, SRL_M2, SRL_M3],
-    imagesTitles: ['Home','Apptointments','Services'],
+    imagesTitles: ['Home','Appointments','Services'],
     imageDisplay: null,
     link: 'https://sportsrecoverylounge.com'
   },

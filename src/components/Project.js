@@ -5,7 +5,7 @@ import {
 import SwipeableViews from 'react-swipeable-views';
 
 import DesktopTemplate from '../assets/imgs/MacScreen_sm.png'
-import MobileTemplate from '../assets/imgs/GalaxyScreen.png'
+import MobileTemplate from '../assets/imgs/GalaxyScreen_.png'
 
 import '../assets/css/Project.css';
 
@@ -50,12 +50,12 @@ class Project extends PureComponent {
     const {index} = this.state;
     return(
       <Grid container direction="row" justify="space-evenly" spacing={2}
-        style={{width: '60%', marginTop: '6vw', marginLeft: '20%'}}>
+        className="titles-container">
         {titles.map( (title, titleIndex) =>
-          <Grid item key={`imageTitle-${titleIndex}`} sm={12/titles.length}>
+          <Grid item key={`imageTitle-${titleIndex}`} xs={12} sm={12/titles.length}>
             <Button fullWidth variant="outlined"
               classes={{
-                root: (titleIndex===index)?'titles-active ':'' + 'titles-root',
+                root: ((titleIndex===index)?'titles-active ':'') + 'titles-root',
                 }}
               onClick={()=>this.setState({index: titleIndex})}>
               {title}
@@ -69,17 +69,8 @@ class Project extends PureComponent {
   render(){
     const {project} = this.props;
     return(
-      <div style={{height: '200vh'}}>
-        <div className="project-intro"
-          style={{
-            textAlign: 'center',
-            position: 'sticky',
-            top: '0px',
-            width: '50%',
-            marginLeft: '25%',
-            padding: '5% 0'
-          }}
-          >
+      <div style={{height: '250vh'}}>
+        <div className="project-intro">
           <Typography variant="h3" style={{padding: '32px 0'}}>{project.title}</Typography>
           <Typography component="p" className="project-desc" style={{paddingBottom: '24px'}}>
             {project.description}
@@ -97,13 +88,13 @@ class Project extends PureComponent {
         </div>
         <div className="project-root">
           <Grid container direction="row" justify="space-around">
-            <Grid item sm={7}>
+            <Grid item xs={12} sm={7}>
               {this.renderDesktopImages(project.imagesDesktop)}
             </Grid>
-            <Grid item sm={4}>
+            <Grid item xs={7} sm={3}>
               {this.renderMobileImages(project.imagesMobile)}
             </Grid>
-            <Grid item sm={12}>
+            <Grid item xs={5} sm={12}>
               {this.renderTitles(project.imagesTitles)}
             </Grid>
           </Grid>
