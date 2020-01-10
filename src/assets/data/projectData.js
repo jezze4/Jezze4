@@ -24,9 +24,12 @@ import VOTE_M4 from '../imgs/vote-map_m.jpg';
 
 const WebProjects = [
   {
-    title: <span id="srl-title">Sport's <b>RECOVERY</b> Lounge</span>,
-    description: "Site to help users make an appointment for some premium-quality " +
-                 " recovery after a vitalizing workout!",
+    title: <div>
+            <span id="srl-title">Sport's <b>RECOVERY</b> Lounge<br/ >
+            <span style={{fontSize: '.7em'}}>Train. Recover. Repeat.</span></span>
+          </div>,
+    description: "Sport's Recovery Lounge provides the resources athletes need " +
+                 "so they can get back to training feeling revitalized!",
     type: 'Adaptive',
     frontEnd: 'ReactJS',
     backEnd: 'Firebase',
@@ -39,8 +42,8 @@ const WebProjects = [
   },
   {
     title: "LDO Staffing Solutions",
-    description: "There are always people looking for jobs! This business offers a " +
-                  "variety of jobs available in Laredo, TX",
+    description: "This little startup helps locals find various jobs in the area " +
+                  "with great success! (Note: still a work-in-progress)",
     type: 'Adaptive',
     frontEnd: 'ReactJS',
     backEnd: 'Firebase',

@@ -240,7 +240,7 @@ class Resume extends PureComponent {
   render(){
     const {value} = this.state;
     return(
-      <div className="resume-container">
+      <div className="resume-container"  style={{background: 'black', color: 'white'}}>
         <Tabs
           classes={{
             root: 'resume-tabs-root',
