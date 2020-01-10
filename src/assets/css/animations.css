@@ -1,8 +1,8 @@
 .anim-typewriter{
   display: inline-block !important;
-  font-family: 'Roboto Mono' !important;
+  font-family: 'Roboto Mono', monospace!important;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange !important; /* The typwriter cursor */
+  border-right: .15em solid transparent !important; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto !important; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .10em !important; /* Adjust as needed */
@@ -37,4 +37,16 @@
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+@keyframes pulse {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 250% 250%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
 }
