@@ -17,7 +17,7 @@
 
 .desktop-img-container{
   width: 73.3vw;
-  margin-bottom: 50vw;
+  margin-bottom: 18vh;
   padding-top: 4vw;
   margin-left: 3.3vw;
 
@@ -56,7 +56,8 @@
   top: 0px;
   padding: 5% 0;
   margin: 0 5%;
-  height: 100vh;
+  padding-bottom: 25%;
+  /* height: 100vh; */
 }
 
 #srl-title{
@@ -136,5 +137,6 @@
   .project-intro{
     margin: 0 25%;
     height: auto;
+    padding-bottom: 5%;
   }
 }
