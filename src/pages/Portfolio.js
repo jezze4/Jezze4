@@ -11,7 +11,6 @@ function typewriterAnimation(steps, delay, count){
   let delayType = delay + .5
   return(
     {
-      translateZ: '0',
       fontSize: '3.5vmax',
       animation: 'typewriter '+(1)+'s steps('+steps+') '+delayType+'s 1 normal both,'+
       'blinkTextCursor 500ms steps('+steps+') '+delay+'s '+inf+' normal'
@@ -21,11 +20,31 @@ function typewriterAnimation(steps, delay, count){
 
 class Portfolio extends PureComponent {
 
+  state = {
+    offset: 0
+  }
+
+  componentDidMount() {
+    this.setState({offset: window.pageYOffset})
+    window.addEventListener('scroll', this.parallaxHeader);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.parallaxHeader);
+  }
+
+  parallaxHeader = () => {
+    if(window.innerHeight >= window.pageYOffset){
+      this.setState({offset: window.pageYOffset});
+    }
+  }
 
   renderHeader(){
+    const {offset} = this.state;
+    let opacityValue = (window.innerHeight - (offset*1.4)) / window.innerHeight;
+    let blurValue = 10 - ((window.innerHeight - (offset*1)) / window.innerHeight * 10);
     return(
       <div style={{
-        translateZ: '1',
+        transform: 'translateZ(1)',
         textAlign: 'center',
         paddingTop: '25vh',
         height: '75vh',
@@ -33,7 +52,9 @@ class Portfolio extends PureComponent {
         backgroundPosition: 'center',
         animation: 'pulse 5s ease infinite',
         position: 'sticky',
-        top: '0'
+        top: '0',
+        opacity: opacityValue,
+        filter: `blur(${blurValue}px)`,
       }}>
         <Typography className="anim-typewriter"
           style={typewriterAnimation(135, 0, 3)}>
@@ -51,7 +72,6 @@ class Portfolio extends PureComponent {
           Go to Resume Instead
         </Button>
         <Typography style={{position: 'absolute', bottom: '30px', width: '100%'}}>
-          <ArrowDropDown className="scroll-down" style={{left: '41.5%'}}/>
           Scroll to continue to Portfolio
           <ArrowDropDown className="scroll-down"/>
         </Typography>
@@ -70,6 +90,7 @@ class Portfolio extends PureComponent {
               <Project
                 key={`project-${index}`}
                 project={data}
+                index={index}
               />
             ))
           }

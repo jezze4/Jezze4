@@ -14,6 +14,27 @@ class Project extends PureComponent {
 
   state = {
     index: 0,
+    componentOffset: 0,
+    offset: 0,
+  }
+
+  componentDidMount() {
+    const {index} = this.props;
+    let offset = window.innerHeight + index * (window.innerHeight*2.5);
+    this.setState({componentOffset: offset})
+    window.addEventListener('scroll', this.parallaxHeader);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.parallaxHeader);
+  }
+
+  parallaxHeader = () => {
+    const {componentOffset} = this.state;
+    let min = componentOffset - window.innerHeight;
+    let max = componentOffset + window.innerHeight;
+    if(window.pageYOffset >= min && window.pageYOffset <= max){
+      this.setState({offset: Math.abs(window.pageYOffset - componentOffset)});
+    }
   }
 
   renderDesktopImages(images){
@@ -68,9 +89,12 @@ class Project extends PureComponent {
 
   render(){
     const {project} = this.props;
+    const {offset} = this.state;
+    let opacityValue = (window.innerHeight - (offset*1.7)) / window.innerHeight;
+    let scaleValue = 5 - ((window.innerHeight - offset) / window.innerHeight * 5);
     return(
       <div style={{height: '250vh'}}>
-        <div className="project-intro">
+        <div className="project-intro" style={{opacity: opacityValue, filter: `blur(${scaleValue}px)`}}>
           <Typography variant="h3" style={{padding: '32px 0'}}>{project.title}</Typography>
           <Typography component="p" className="project-desc" style={{paddingBottom: '24px'}}>
             {project.description}
