@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import {Link} from 'react-router-dom';
+import {ArrowDropDown} from '@material-ui/icons';
 import Project from '../components/Project';
 import {WebProjects} from '../assets/data/projectData';
 
@@ -24,12 +25,15 @@ class Portfolio extends PureComponent {
   renderHeader(){
     return(
       <div style={{
+        translateZ: '1',
         textAlign: 'center',
         paddingTop: '25vh',
         height: '75vh',
         background: 'radial-gradient(circle, rgba(148, 0, 211,.25), black 60%)',
         backgroundPosition: 'center',
-        animation: 'pulse 5s ease infinite'
+        animation: 'pulse 5s ease infinite',
+        position: 'sticky',
+        top: '0'
       }}>
         <Typography className="anim-typewriter"
           style={typewriterAnimation(135, 0, 3)}>
@@ -37,17 +41,19 @@ class Portfolio extends PureComponent {
         </Typography><br />
         <Typography className="anim-typewriter"
           style={typewriterAnimation(135, 1.5, 3)}>
-          PORTFOLIO
+          PORTFOLIO.JS
         </Typography><br /><br />
         <Typography className="anim-typewriter"
           style={typewriterAnimation(135, 3, 0)}>
           Jesus G Martinez
         </Typography><br /><br /><br />
         <Button component={Link} to="/resume" classes={{root: 'resume-link'}}>
-          To My Resume
+          Go to Resume Instead
         </Button>
         <Typography style={{position: 'absolute', bottom: '30px', width: '100%'}}>
-          Scroll to continue
+          <ArrowDropDown className="scroll-down" style={{left: '41.5%'}}/>
+          Scroll to continue to Portfolio
+          <ArrowDropDown className="scroll-down"/>
         </Typography>
       </div>
     );
