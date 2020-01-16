@@ -49,15 +49,21 @@ class Resume extends PureComponent {
         </Typography>
         <div className="resume-section-general" style={fadeInAnimation((19/20 + .2))}>
           <Typography gutterBottom component="div">
-            <Box fontStyle="oblique" color="darkgray" width="50%" component="div" marginBottom="24px">
+            <Box fontStyle="oblique" color="darkgray" width="50%" component="div" marginBottom="24px"
+              className="resume-section-heading"
+            >
               With a great love for architecture and design, solving puzzles, math,
               and attention to even the smallest of details, I follow the path of
               a web developer with a stronger focus on the front-end and a desire
               to use my skills to make a change in the world.
             </Box>
           </Typography>
-          <Typography variant="h2" gutterBottom>Jesus Gonzalo Martinez Jr.</Typography>
-          <Typography variant="h4" gutterBottom>Full-Stack Developer, Android Developer</Typography>
+          <Typography variant="h2" gutterBottom className="resume-myName">
+            Jesus Gonzalo Martinez Jr.
+          </Typography>
+          <Typography variant="h4" gutterBottom className="resume-roles">
+            Full-Stack Developer, Android Developer
+          </Typography>
           <hr />
           <Grid container direction="row" className="resume-section-body" justify="space-evenly">
             <Grid container direction="column" justify="space-around">
