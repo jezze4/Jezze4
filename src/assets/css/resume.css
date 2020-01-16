@@ -177,4 +177,24 @@ a:hover{
     overflow-x: hidden;
   }
 
+  .resume-section-experience{
+    width: calc(100vw - 64px);
+  }
+
+  .experience-company{
+    overflow-x: hidden;
+  }
+
+  .experience-data{
+    padding: 0px !important;
+  }
+
+  .experience-role{
+    padding-top: 24px;
+  }
+
+  .resume-pdf-link{
+    display: none;
+  }
+
 }
