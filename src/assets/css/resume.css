@@ -127,12 +127,12 @@ a:hover{
   }
 
   .resume-section-title{
-    font-size: 1.5em !important;
+    font-size: 6vw !important;
   }
 
   .resume-section-container{
     overflow-y: auto !important;
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
     height: calc(100vh - 60px);
     width: 100%;
   }
@@ -142,12 +142,39 @@ a:hover{
   }
 
   .resume-myName{
-    font-size: 3em !important;
+    font-size: 12vw !important;
   }
 
   .resume-roles{
-    font-size: 1.8em !important;
+    font-size: 7vw !important;
   }
 
+  hr{
+    margin-bottom: 24px;
+  }
+
+  .resume-section-skills{
+    width: calc(100vw - 64px);
+    /* margin-left: 50px; */
+  }
+
+  .skill-header{
+    font-size: 4.5vw !important;
+  }
+
+  .skill-details{
+    width: calc(100vw - 64px);
+    white-space: normal !important;
+    font-size: 4vw !important;
+    height: 20vw !important;
+  }
+
+  .skills-list{
+    width: 200vw !important;
+  }
+
+  .resume-skill{
+    overflow-x: hidden;
+  }
 
 }

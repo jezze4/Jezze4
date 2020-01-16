@@ -153,35 +153,35 @@ class Resume extends PureComponent {
           </Typography>
         <Typography gutterBottom component="div" variant="h6" style={fadeInAnimation((6/20 + .2))}>
           <Box fontStyle="oblique" color="darkgray" fontWeight="300"
-            component="div" marginBottom="36px" textAlign="center" whiteSpace="nowrap">
+            component="div" marginBottom="36px" textAlign="center" whiteSpace="nowrap" className="skill-details">
             <span style={{fontSize: '.7em',color: "rgba(255,255,255,.4)"}}>{this.state.skill}</span>{this.state.skillInfo}
           </Box>
         </Typography>
         <div className="resume-section-skills" style={fadeInAnimation((6/20 + .2))}>
-          <Grid container direction="row" justify="space-around" style={{width: '100%'}}>
+          <Grid container direction="row" justify="space-around" style={{width: '100%'}} className="skills-list">
             <Grid item style={{width: '25%'}}>
-              <Typography variant="h4" gutterBottom style={{textAlign: 'center', color: 'green'}}>
+              <Typography variant="h4" className='skill-header' gutterBottom style={{textAlign: 'center', color: 'green'}}>
                 Proficiency
               </Typography>
               {Skills.ProficientTools.map( (skill, index) =>
                 this.showSkill(skill.skill, skill.info, "proficient", index))}
             </Grid>
             <Grid item style={{width: '25%'}}>
-              <Typography variant="h4" gutterBottom style={{textAlign: 'center', color: 'royalblue'}}>
+              <Typography variant="h4" className='skill-header' gutterBottom style={{textAlign: 'center', color: 'royalblue'}}>
                 Familiar
               </Typography>
               {Skills.FamiliarTools.map( (skill, index) =>
                 this.showSkill(skill.skill, skill.info, "familiar", index))}
             </Grid>
             <Grid item style={{width: '25%'}}>
-              <Typography variant="h4" gutterBottom style={{textAlign: 'center', color: 'violet'}}>
+              <Typography variant="h4" className='skill-header' gutterBottom style={{textAlign: 'center', color: 'violet'}}>
                 Hard Skills
               </Typography>
               {Skills.HardSkills.map( (skill, index) =>
                 this.showSkill(skill.skill, skill.info, "hard", index))}
             </Grid>
             <Grid item style={{width: '25%'}}>
-              <Typography variant="h4" gutterBottom style={{textAlign: 'center', color: 'red'}}>
+              <Typography variant="h4" className='skill-header' gutterBottom style={{textAlign: 'center', color: 'red'}}>
                 Soft Skills
               </Typography>
               {Skills.SoftSkills.map( (skill, index) =>
