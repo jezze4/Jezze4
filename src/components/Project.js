@@ -92,7 +92,7 @@ class Project extends PureComponent {
                 root: ((titleIndex===index)?'titles-active ':'') + 'titles-root',
                 }}
               onClick={()=>this.setState({index: titleIndex})}>
-              {title}
+              <span style={{color: 'white'}}>{title}</span>
             </Button>
           </Grid>
         )}

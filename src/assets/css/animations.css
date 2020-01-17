@@ -56,3 +56,20 @@
   50% { bottom: -10px;}
   100%{ bottom: 10px;}
 }
+
+@keyframes oscillateBG {
+  0% {
+    /* background-size: 150% 150%; */
+    background-position: 140% 25%;
+  }
+  33% {
+    background-position: 80% 75%
+  }
+  66% {
+    background-position: 20% 25%;
+  }
+  100% {
+    /* background-size: 150% 150%; */
+    background-position: -40% 75%;
+  }
+}
