@@ -41,7 +41,7 @@
 
 .titles-root{
   color: rgb(148, 0, 211) !important;
-  border-color: rgba(148, 0, 211, 1) !important;
+  border-color: rgba(148, 0, 211, .4) !important;
   overflow: hidden;
   transition: all .5s !important;
   filter: brightness(50%);
@@ -50,12 +50,12 @@
 .titles-active{
   color: white !important;
   /* background: dodgerblue !important; */
-  border-color: rgba(148, 0, 211, .3) !important;
+  border-color: rgba(148, 0, 211, 0) !important;
   /* background: rgba(148, 0, 211, .66) !important; */
   background: radial-gradient(circle, rgba(148, 0, 211, .7) , black 40%);
   background-size: 200% 200%;
   filter: none;
-  animation: oscillateBG 2.5s linear infinite !important;
+  animation: oscillateBG 2s linear infinite !important;
 }
 
 .project-intro{
